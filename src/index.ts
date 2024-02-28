@@ -12,6 +12,7 @@ const prisma = new PrismaClient()
 
 app.use(express.json());
 app.use("/api", baseRoutes);
+
 app.listen(port, () => {
     prisma.$connect();
     console.log(`[server]: Server is running at http://localhost:${port}`);
