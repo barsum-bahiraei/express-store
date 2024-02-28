@@ -1,4 +1,4 @@
-import express, {Express, Request, Response} from "express";
+import express, {Express} from "express";
 import {PrismaClient} from '@prisma/client'
 import dotenv from "dotenv";
 import {baseRoutes} from "./modules/base.routes";
@@ -11,6 +11,7 @@ const prisma = new PrismaClient()
 
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 app.use("/api", baseRoutes);
 
 app.listen(port, () => {

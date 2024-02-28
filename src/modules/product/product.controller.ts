@@ -2,8 +2,7 @@ import {Request, Response} from "express";
 
 export class ProductController {
     search(req: Request, res: Response) {
-        res.json({
-            message: 'success'
-        }).status(200)
+        console.log(req.body)
+        res.json(req.body).status(200)
     }
 }
