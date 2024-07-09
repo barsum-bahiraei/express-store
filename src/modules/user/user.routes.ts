@@ -5,7 +5,7 @@ import {UserController} from "./user.controller";
 const userRoutes = express.Router();
 const controller = new UserController();
 
-userRoutes.post('/login', controller.login)
+userRoutes.get('/login', controller.login)
 
 
 export {userRoutes}
