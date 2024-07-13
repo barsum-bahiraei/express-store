@@ -7,7 +7,7 @@ export const appDataSource = new DataSource({
     port: 1433,
     username: "sa", // Optional for Windows Authentication
     password: "database1234", // Optional for Windows Authentication
-    database: "TestDatabase",
+    database: "store",
     entities: [User],
     synchronize: true,
     logging: false,

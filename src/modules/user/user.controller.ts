@@ -6,15 +6,16 @@ export class UserController {
     userRepository = appDataSource.getRepository(User);
 
     login = async (req: Request, res: Response) => {
-        this.userRepository.create({
+        await this.userRepository.save({
             firstName: 'amin',
             lastName: 'ben',
             age: 12,
         })
-        let users = await this.userRepository.find();
+        const users = await this.userRepository.find();
         console.log(users)
         res.json({
-            message: 'success'
+            message: 'success',
+            data: users,
         }).status(200)
     }
 }
